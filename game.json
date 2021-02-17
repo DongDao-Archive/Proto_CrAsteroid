@@ -1,0 +1,735 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 98,
+    "major": 4,
+    "minor": 0,
+    "revision": 0
+  },
+  "properties": {
+    "adMobAppId": "",
+    "adaptGameResolutionAtRuntime": true,
+    "folderProject": true,
+    "linuxExecutableFilename": "",
+    "macExecutableFilename": "",
+    "orientation": "landscape",
+    "packageName": "com.example.gamename",
+    "projectFile": "C:\\Users\\garud\\Desktop\\Archived project\\GDevelop\\CrAsteroid - Copy\\game.json",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "",
+    "useExternalSourceFiles": false,
+    "version": "1.0.0",
+    "winExecutableFilename": "",
+    "winExecutableIconFile": "",
+    "name": "CrAsteroid",
+    "author": "",
+    "windowWidth": 800,
+    "windowHeight": 600,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 30,
+    "verticalSync": false,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "showGDevelopSplash": true
+    },
+    "extensions": [
+      {
+        "name": "BuiltinObject"
+      },
+      {
+        "name": "BuiltinAudio"
+      },
+      {
+        "name": "BuiltinVariables"
+      },
+      {
+        "name": "BuiltinTime"
+      },
+      {
+        "name": "BuiltinMouse"
+      },
+      {
+        "name": "BuiltinKeyboard"
+      },
+      {
+        "name": "BuiltinJoystick"
+      },
+      {
+        "name": "BuiltinCamera"
+      },
+      {
+        "name": "BuiltinWindow"
+      },
+      {
+        "name": "BuiltinFile"
+      },
+      {
+        "name": "BuiltinNetwork"
+      },
+      {
+        "name": "BuiltinScene"
+      },
+      {
+        "name": "BuiltinAdvanced"
+      },
+      {
+        "name": "Sprite"
+      },
+      {
+        "name": "BuiltinCommonInstructions"
+      },
+      {
+        "name": "BuiltinCommonConversions"
+      },
+      {
+        "name": "BuiltinStringInstructions"
+      },
+      {
+        "name": "BuiltinMathematicalTools"
+      },
+      {
+        "name": "BuiltinExternalLayouts"
+      }
+    ],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/ships/ship_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_bullet-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/ships/ship_bullet-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/larg_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/larg_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/larg_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/larg_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/larg_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/larg_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/medium_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/medium_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/medium_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/medium_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/medium_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/medium_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/small_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/small_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/small_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/small_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/small_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/asteroids/small_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/WASD.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/WASD.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/Arrow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/Arrow.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/space.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets/space.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/lazer/LazerZap-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\lazer\\LazerZap-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/lazer/LazerZap-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\lazer\\LazerZap-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/lazer/LazerZap-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\lazer\\LazerZap-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/lazer/LazerZap-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\lazer\\LazerZap-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/lazer/LazerZap-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\lazer\\LazerZap-5.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/lazer/LazerZap-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\lazer\\LazerZap-6.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Blast1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Blast1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Blast2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Blast2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Blast3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Blast3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Blast4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Blast4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/color/Black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\color\\Black.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/color/White.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\color\\White.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Asteroids Assets/audio/Venus.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\Venus.wav",
+        "userAdded": false
+      },
+      {
+        "file": "Asteroids Assets/audio/bangLarge.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\bangLarge.wav",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/bangMedium.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\bangMedium.wav",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/bangSmall.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\bangSmall.wav",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/thrust.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\thrust.wav",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/Explosion.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\Explosion.ogg",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/fire.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\fire.wav",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/Laser_Shoot.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\Laser_Shoot.ogg",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/thruster_down.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\thruster_down.ogg",
+        "userAdded": true
+      },
+      {
+        "file": "Asteroids Assets/audio/thruster.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Asteroids Assets\\audio\\thruster.ogg",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/Arrow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\Arrow.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/debrish.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\debrish.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/larg_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\larg_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/larg_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\larg_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/larg_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\larg_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/medium_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\medium_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/medium_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\medium_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/medium_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\medium_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/small_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\small_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/small_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\small_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/asteroids/small_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\asteroids\\small_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/color/Green.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\color\\Green.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/gui/flatLight22.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\gui\\flatLight22.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/gui/flatLight23.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\gui\\flatLight23.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/gui/flatLight34.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\gui\\flatLight34.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/gui/flatLight35.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\gui\\flatLight35.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-10.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-6.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-7.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-8.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/Dead-9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\Dead-9.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\ship_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_bullet-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\ship_bullet-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_bullet.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\ship_bullet.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_part_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\ship_part_1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_part_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\ship_part_2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/ships/ship_part_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\ships\\ship_part_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/space.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\space.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Asteroids Assets/WASD.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Asteroids Assets\\WASD.png",
+        "smoothed": true,
+        "userAdded": true
+      }
+    ],
+    "resourceFolders": []
+  },
+  "objects": [],
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/asteroid1"
+    }
+  ],
+  "externalEvents": [],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/asteroidextension"
+    }
+  ],
+  "externalLayouts": [],
+  "externalSourceFiles": []
+}

@@ -1,0 +1,1433 @@
+{
+  "author": "",
+  "description": "",
+  "extensionNamespace": "",
+  "fullName": "",
+  "name": "AsteroidExtension",
+  "shortDescription": "",
+  "tags": "",
+  "version": "",
+  "eventsFunctions": [
+    {
+      "description": "Change asteroid direction on hit",
+      "fullName": "Change asteroid direction on hit",
+      "functionType": "Action",
+      "name": "ChangeAsteroidDirectionOnHit",
+      "sentence": "Change _PARAM1_ direction to _PARAM2_.Angle() +(-) _PARAM4_ , if it was hit by _PARAM3_",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "ShockWave",
+                    "Bullet",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "pushed",
+                    "!=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AnimationName"
+                  },
+                  "parameters": [
+                    "ShockWave",
+                    "\"Idle\""
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "Asteroid"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Asteroid",
+                "Ship.Angle() + RandomFloatInRange(-(GetArgumentAsNumber(\"MaxRandomAngle\")), GetArgumentAsNumber(\"MaxRandomAngle\"))",
+                "Asteroid.Variable(defaultSpeed)",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "Heading",
+                "=",
+                "Asteroid.ForceAngle()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "pushed",
+                "=",
+                "2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "actedOn",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Asteroid",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Ship",
+          "longDescription": "",
+          "name": "Ship",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "ShockWave",
+          "longDescription": "",
+          "name": "ShockWave",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "",
+          "longDescription": "",
+          "name": "MaxRandomAngle",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Speed up asteroid if it was blasted by shockwave",
+      "fullName": "Speed up asteroid if it was blasted by shockwave",
+      "functionType": "Action",
+      "name": "SpeedUpAsteroidAfterBlast",
+      "sentence": "Speed up _PARAM1_ to _PARAM4_ if it was blasted by _PARAM3_, (set its heading to _PARAM2_.Angle())",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "ShockWave",
+                    "Bullet",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "pushed",
+                    "!=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AnimationName"
+                  },
+                  "parameters": [
+                    "ShockWave",
+                    "\"Blast\""
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Asteroid",
+                "\"a\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnPauseObjectTimer"
+              },
+              "parameters": [
+                "Asteroid",
+                "\"a\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "Asteroid"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Asteroid",
+                "Ship.Angle()",
+                "GetArgumentAsNumber(\"newSpeed\")",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "Heading",
+                "=",
+                "Asteroid.ForceAngle()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "pushed",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "actedOn",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Asteroid",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Ship",
+          "longDescription": "",
+          "name": "Ship",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "ShockWave",
+          "longDescription": "",
+          "name": "ShockWave",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "newSpeed",
+          "longDescription": "",
+          "name": "newSpeed",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Speed down asteroid after a defined period",
+      "fullName": "SpeedDownAsteroid2",
+      "functionType": "Action",
+      "name": "SpeedDown2",
+      "sentence": "Speed down _PARAM1_  to _PARAM2_ after _PARAM3_",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ObjectTimer"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "\"a\"",
+                    "GetArgumentAsNumber(\"timeBeforeChangingSpeed\")"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "pushed",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Asteroid",
+                "\"a\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PauseObjectTimer"
+              },
+              "parameters": [
+                "Asteroid",
+                "\"a\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "Asteroid"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Asteroid",
+                "Asteroid.Variable(Heading)",
+                "GetArgumentAsNumber(\"newSpeed\")",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "pushed",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "New speed after speeding down",
+          "longDescription": "",
+          "name": "newSpeed",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Time before changing speed",
+          "longDescription": "",
+          "name": "timeBeforeChangingSpeed",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Speed down asteroid after a defined period",
+      "fullName": "SpeedDownAsteroid1",
+      "functionType": "Action",
+      "name": "SpeedDown1",
+      "sentence": "Speed down _PARAM1_  to _PARAM2_ after _PARAM3_",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ObjectTimer"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "\"a\"",
+                    "GetArgumentAsNumber(\"timeBeforeChangingSpeed\")"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "pushed",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "Asteroid"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Asteroid",
+                "Asteroid.Variable(Heading)",
+                "GetArgumentAsNumber(\"newSpeed\")",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "pushed",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Asteroid",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "New speed after speeding down",
+          "longDescription": "",
+          "name": "newSpeed",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Time before changing speed",
+          "longDescription": "",
+          "name": "timeBeforeChangingSpeed",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn asteroid, launch and set up",
+      "fullName": "Spawn Asteroid Near Lazer",
+      "functionType": "Action",
+      "name": "SpawnAsteroidNearLazer",
+      "sentence": "Spawn _PARAM1_ and launch (other params: _PARAM2_, _PARAM3_, _PARAM4_, _PARAM5_, _PARAM6_)",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Asteroid",
+                "PreviousAsteroid.X() - 5",
+                "PreviousAsteroid.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "Asteroid",
+                "=",
+                "(GetArgumentAsNumber(\"AnimationCount\"))"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "RotateTowardAngle"
+              },
+              "parameters": [
+                "Asteroid",
+                "RandomInRange(1,350)",
+                "0",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "pushed",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "actedOn",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Asteroid",
+                "\"a\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PauseObjectTimer"
+              },
+              "parameters": [
+                "Asteroid",
+                "\"a\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Egal"
+                  },
+                  "parameters": [
+                    "GetArgumentAsNumber(\"Up\")",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "-135 + (RandomFloatInRange(-(GetArgumentAsNumber(\"MaxRandomAngle\")), GetArgumentAsNumber(\"MaxRandomAngle\")))",
+                    "Asteroid.Variable(defaultSpeed) * 1.5",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Egal"
+                  },
+                  "parameters": [
+                    "GetArgumentAsNumber(\"Up\")",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "135 + (RandomFloatInRange(-(GetArgumentAsNumber(\"MaxRandomAngle\")), GetArgumentAsNumber(\"MaxRandomAngle\")))",
+                    "Asteroid.Variable(defaultSpeed) * 1.5",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Object",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Total number of animation - 1",
+          "longDescription": "",
+          "name": "AnimationCount",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "PreviousAstroid",
+          "longDescription": "",
+          "name": "PreviousAsteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "MaxRandomAngle",
+          "longDescription": "",
+          "name": "MaxRandomAngle",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Up Or Down (1 for Up, 0 for Down)",
+          "longDescription": "",
+          "name": "Up",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "ShockWave",
+          "longDescription": "",
+          "name": "ShockWave",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Spawn asteroid, launch and set up",
+      "fullName": "Spawn Asteroid And Launch",
+      "functionType": "Action",
+      "name": "SpawnAsteroidAndLaunch",
+      "sentence": "Spawn _PARAM1_ and launch (other params: _PARAM2_, _PARAM3_, _PARAM4_, _PARAM5_)",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Scout",
+                "Random(500)",
+                "Random(700)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "Scout"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "infiniteLoopWarning": true,
+              "type": "BuiltinCommonInstructions::While",
+              "whileConditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Scout",
+                    "Ship",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "Scout",
+                    "=",
+                    "Random(500)",
+                    "=",
+                    "Random(550)"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Asteroid",
+                    "Scout.X()",
+                    "Scout.Y()",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "=",
+                    "Random(GetArgumentAsNumber(\"AnimationCount\"))"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "RotateTowardAngle"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "RandomInRange(1,350)",
+                    "0",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "GetArgumentAsNumber(\"Angle\")",
+                    "Asteroid.Variable(defaultSpeed)",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "pushed",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "actedOn",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "\"a\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PauseObjectTimer"
+                  },
+                  "parameters": [
+                    "Asteroid",
+                    "\"a\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Scout",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Scout",
+                "=",
+                "Random(500)",
+                "=",
+                "Random(550)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Object",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Launch angle",
+          "longDescription": "",
+          "name": "Angle",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Total number of animation - 1",
+          "longDescription": "",
+          "name": "AnimationCount",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "PlayerShip",
+          "longDescription": "",
+          "name": "Ship",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "ScoutAsteroid",
+          "longDescription": "",
+          "name": "Scout",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Add score and change score display",
+      "fullName": "AddScore",
+      "functionType": "Action",
+      "name": "AddScore",
+      "sentence": "Add _PARAM1_ to scene variable (Score) and update _PARAM2_",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "GetArgumentAsNumber(\"ScoreToAdd\")"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "Text",
+                "=",
+                "ToString(Variable(Score))"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Score to add",
+          "longDescription": "",
+          "name": "ScoreToAdd",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Text",
+          "longDescription": "",
+          "name": "Text",
+          "optional": false,
+          "supplementaryInformation": "TextObject::Text",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Process Asteroid on collision with Lazer",
+      "fullName": "Process Asteroid on collision with Lazer",
+      "functionType": "Action",
+      "name": "ProcessAsteroid",
+      "sentence": "Add score and combo when _PARAM1_ collide with Lazer (other params: _PARAM2_, _PARAM3_, _PARAM4_,  _PARAM5_, _PARAM6_, _PARAM7_)",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "Asteroid",
+                "actedOn",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AsteroidExtension::AddScore"
+              },
+              "parameters": [
+                "",
+                "(GetArgumentAsNumber(\"ScoreToAdd\") + Ship.Variable(combo) * 10)",
+                "Score_txt",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Ship",
+                "combo",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Ship",
+                "currentEnergy",
+                "+",
+                "GetArgumentAsNumber(\"EnergyToAdd\")"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Ship",
+                "currentEnergy",
+                "+",
+                "(Ship.Variable(combo) - 1) / (GetArgumentAsNumber(\"EnergyInCombo\"))"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"comboTimer\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnPauseTimer"
+              },
+              "parameters": [
+                "",
+                "\"comboTimer\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "EnergyAdded_txt",
+                "=",
+                "ToString(trunc( ((Ship.Variable(combo) - 1) / 10)*100)/100)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Asteroid",
+          "longDescription": "",
+          "name": "Asteroid",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "EnergyAdded_txt",
+          "longDescription": "",
+          "name": "EnergyAdded_txt",
+          "optional": false,
+          "supplementaryInformation": "TextObject::Text",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Score txt",
+          "longDescription": "",
+          "name": "Score_txt",
+          "optional": false,
+          "supplementaryInformation": "TextObject::Text",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Ship",
+          "longDescription": "",
+          "name": "Ship",
+          "optional": false,
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Score to add",
+          "longDescription": "",
+          "name": "ScoreToAdd",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Flat energy to add",
+          "longDescription": "",
+          "name": "EnergyToAdd",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Energy in combo (divided by this number)",
+          "longDescription": "",
+          "name": "EnergyInCombo",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": []
+}
